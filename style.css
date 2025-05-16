@@ -162,8 +162,16 @@ textarea:not([rows]) {
   flex-direction: column;
 }
 
+.noverflow {
+  overflow: hidden;
+}
+
 .row {
   flex-direction: row;
+}
+
+.space-around {
+  justify-content: space-around;
 }
 
 .space-between {
@@ -174,13 +182,42 @@ textarea:not([rows]) {
   justify-content: center;
 }
 
+/* Hero styling */
+.hero-center {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-image {
+  max-height: 100%;
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  border-radius: 0 0 0 15rem;
+  overflow: hidden;
+  background-color: var(--color-secondary);
+  /* FIX THIS! */
+  animation: flexitarian 3s ease-in;
+}
+
+.hero-image:hover {
+  /* Hmm... */
+}
+
+.hero-text {
+  flex: 1;
+  /* transition: flex 3s ease-in; */
+}
+
 .grid {
   display: grid;
 }
 
 /* color utility classes */
-
 /* TBA!! */
+.bc-purple {
+  background-color: var(--color-secondary);
+}
 
 /* ------------- */
 /*      BODY     */
@@ -193,7 +230,12 @@ body {
 
 h1 {
   font-family: var(--font-heading);
-  font-size: var(--fs-600);
+  font-size: var(--fs-500);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-400);
 }
 
 p {
@@ -232,11 +274,21 @@ nav {
   box-shadow: 0px 5px 5px 5px rgba(63, 66, 113, 0.1);
   border-radius: 2rem;
   padding: 2rem;
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-dark);
+  overflow: hidden;
+}
+
+.hero {
+  box-shadow: 0px 5px 5px 5px rgba(63, 66, 113, 0.1);
+  border-radius: 2rem;
+  padding-left: 2rem;
+  background-color: var(--color-tertiary);
+  height: 70vh;
 }
 
 .container {
   gap: 3rem;
+  overflow: hidden;
 }
 
 .button {
@@ -250,6 +302,7 @@ nav {
   display: flex;
   box-shadow: 0px 5px 5px 5px rgba(63, 66, 113, 0.1);
   transition: background-color 0.5s ease-in, width 0.5s ease-in;
+  overflow: hidden;
 }
 
 .button:hover {
@@ -292,12 +345,12 @@ nav {
 /*      KEYFRAMES      */
 /* ------------------- */
 
-@keyframes button-hover {
+@keyframes flexitarian {
   0% {
-    background-color: var(--color-tertiary);
+    flex: 1;
   }
 
   100% {
-    background-color: var(--color-primary-dark);
+    flex: 1.2;
   }
 }
